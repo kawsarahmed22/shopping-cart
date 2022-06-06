@@ -14,14 +14,21 @@ function updateProduct(product, price, isIncreaseing){
     const phoneTotal = document.getElementById(product+'-total');
     const phoneTotalNumber = phoneTotal.innerText;
     phoneTotal.innerText = productInputNumber * price;
+    calculateTotal();
 
+}
+function getInputValue(product){
+    const productInput = document.getElementById(product+'-number');
+    const productInputNumber = parseInt(productInput.value);
+    return productInputNumber;
 }
 
 
-
-
-
-
+function calculateTotal(){
+    const phoneTotal = getInputValue('phone') * 1219;
+    const casseTotal = getInputValue('case') * 59;
+    document.getElementById('sub-total').innerText = phoneTotal + casseTotal;
+}
 
 
 // Increase Decrease Event Handler
