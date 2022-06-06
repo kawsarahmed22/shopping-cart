@@ -27,7 +27,12 @@ function getInputValue(product){
 function calculateTotal(){
     const phoneTotal = getInputValue('phone') * 1219;
     const casseTotal = getInputValue('case') * 59;
-    document.getElementById('sub-total').innerText = phoneTotal + casseTotal;
+    const subTotal = phoneTotal + casseTotal
+    const tax = subTotal / 10;
+    const totalPrice = subTotal + tax;
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('tax').innerText = tax;
+    document.getElementById('total').innerText = totalPrice;
 }
 
 
